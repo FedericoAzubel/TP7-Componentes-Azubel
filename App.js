@@ -20,13 +20,14 @@ export default function App() {
   const handleContactar = () => {
     Alert.alert("Mensaje enviado", mensaje || "No escribiste nada.");
   };
-
+  imgLocal = require('./assets/codigo.png')
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#008B8B" barStyle="light-content" />
       <ImageBackground
-        source={{ uri: 'https://i.imgur.com/3aX9Z1Z.jpeg' }}
+        source={imgLocal}
         style={styles.background}
+        resizeMode="cover"
       >
         <View style={styles.card}>
           <Image
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   background: {
-    flex: 1,
+    ...StyleSheet.absoluteFillObject,
     justifyContent: 'center',
     alignItems: 'center'
   },
